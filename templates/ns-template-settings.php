@@ -1,3 +1,4 @@
 <?php
-    // placeholder for Settings template page
-?>
+	/**
+	 * Placeholder for Settings template page.
+	 */
