@@ -40,17 +40,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 } 
 
 // load constants and libraries
-define( 'NS_CLONER_V3_ADDON_FEED', 'http://neversettle.it/feed/?post_type=product&product_cat=ns-cloner-add-ons');
+define( 'NS_CLONER_V3_ADDON_FEED', 'http://neversettle.it/feed/?post_type=product&product_cat=ns-cloner-add-ons' );
 define( 'NS_CLONER_V3_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'NS_CLONER_V3_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'NS_CLONER_LOG_FILE', NS_CLONER_V3_PLUGIN_DIR . 'logs/ns-cloner-summary.log' );
-define( 'NS_CLONER_LOG_FILE_DETAILED', NS_CLONER_V3_PLUGIN_DIR . 'logs/ns-cloner-' . date("Ymd-His", time()) . '.html' );
+define( 'NS_CLONER_LOG_FILE_DETAILED', NS_CLONER_V3_PLUGIN_DIR . 'logs/ns-cloner-' . date( "Ymd-His", time() ) . '.html' );
 define( 'NS_CLONER_LOG_FILE_URL', NS_CLONER_V3_PLUGIN_URL . 'logs/ns-cloner-summary.log' );
 define( 'NS_CLONER_LOG_FILE_DETAILED_URL', NS_CLONER_V3_PLUGIN_URL . 'logs/ns-cloner-' . date("Ymd-His", time()) . '.html' );
 
 // load Kint if no other plugins already have
-if ( !class_exists( 'Kint' ) ) {
-	require_once(NS_CLONER_V3_PLUGIN_DIR.'/lib/kint/Kint.class.php');
+if ( ! class_exists( 'Kint' ) ) {
+	require_once( NS_CLONER_V3_PLUGIN_DIR . '/lib/kint/Kint.class.php' );
 }
 
 require_once(NS_CLONER_V3_PLUGIN_DIR.'/lib/ns-utils.php');
