@@ -1,9 +1,13 @@
 <?php
-isset( $GLOBALS['_kint_settings'] ) or $GLOBALS['_kint_settings'] = array();
+isset($GLOBALS['_kint_settings']) or $GLOBALS['_kint_settings'] = array();
 $_kintSettings = &$GLOBALS['_kint_settings'];
 
 
-/** @var bool if set to false, kint will become silent, same as Kint::enabled(false) or Kint::$enabled = false */
+/**
+* 
+ *
+ * @var bool if set to false, kint will become silent, same as Kint::enabled(false) or Kint::$enabled = false 
+*/
 $_kintSettings['enabled'] = true;
 
 
@@ -20,9 +24,8 @@ $_kintSettings['displayCalledFrom'] = true;
  * [!] EXAMPLE (works with for phpStorm and RemoteCall Plugin):
  *
  * $_kintSettings['fileLinkFormat'] = 'http://localhost:8091/?message=%f:%l';
- *
  */
-$_kintSettings['fileLinkFormat'] = ini_get( 'xdebug.file_link_format' );
+$_kintSettings['fileLinkFormat'] = ini_get('xdebug.file_link_format');
 
 
 /**
@@ -47,10 +50,9 @@ $_kintSettings['fileLinkFormat'] = ini_get( 'xdebug.file_link_format' );
  * );
  *
  * $_kintSettings['fileLinkFormat'] = 'http://localhost:8091/?message=%f:%l';
- *
  */
 $_kintSettings['appRootDirs'] = array(
-	$_SERVER['DOCUMENT_ROOT'] => '&lt;ROOT&gt;'
+    $_SERVER['DOCUMENT_ROOT'] => '&lt;ROOT&gt;'
 );
 
 
@@ -78,22 +80,42 @@ $_kintSettings['appRootDirs'] = array(
 $_kintSettings['traceCleanupCallback'] = null;
 
 
-/** @var int max length of string before it is truncated and displayed separately in full. Zero or false to disable */
+/**
+* 
+ *
+ * @var int max length of string before it is truncated and displayed separately in full. Zero or false to disable 
+*/
 $_kintSettings['maxStrLength'] = 60;
 
-/** @var array possible alternative char encodings in order of probability, eg. array('windows-1251') */
+/**
+* 
+ *
+ * @var array possible alternative char encodings in order of probability, eg. array('windows-1251') 
+*/
 $_kintSettings['charEncodings'] = array();
 
 
-/** @var int max array/object levels to go deep, if zero no limits are applied */
+/**
+* 
+ *
+ * @var int max array/object levels to go deep, if zero no limits are applied 
+*/
 $_kintSettings['maxLevels'] = 5;
 
 
-/** @var bool whether dumped indexed arrays that are in ideal sequence are displayed */
+/**
+* 
+ *
+ * @var bool whether dumped indexed arrays that are in ideal sequence are displayed 
+*/
 $_kintSettings['hideSequentialKeys'] = true;
 
 
-/** @var string name of theme for rich view */
+/**
+* 
+ *
+ * @var string name of theme for rich view 
+*/
 $_kintSettings['theme'] = 'original';
 
 
@@ -118,13 +140,16 @@ $_kintSettings['theme'] = 'original';
  *
  *     // no need to return true to continue output
  * };
- *
  */
 $_kintSettings['keyFilterCallback'] = null;
 
 
-/** @var bool only set to true if you want to develop kint and know what you're doing */
+/**
+* 
+ *
+ * @var bool only set to true if you want to develop kint and know what you're doing 
+*/
 $_kintSettings['devel'] = false;
 
 
-unset( $_kintSettings );
+unset($_kintSettings);

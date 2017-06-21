@@ -29,7 +29,7 @@ class Kint_Parsers_ClassMethods extends kintParser
                 foreach($method->getParameters() as $param) {
                     $paramString = '';
 
-                    if ( $param->isArray() ) {
+                    if ($param->isArray() ) {
                         $paramString .= 'array ';
                     } else {
                         try {
@@ -37,8 +37,8 @@ class Kint_Parsers_ClassMethods extends kintParser
                                 $paramString .= $paramClassName->name . ' ';
                             }
                         } catch ( ReflectionException $e ) {
-                            preg_match( '/\[\s\<\w+?>\s([\w]+)/s', $param->__toString(), $matches );
-                            $paramClassName = isset( $matches[1] ) ? $matches[1] : '';
+                            preg_match('/\[\s\<\w+?>\s([\w]+)/s', $param->__toString(), $matches);
+                            $paramClassName = isset($matches[1]) ? $matches[1] : '';
 
                             $paramString .= ' UNDEFINED CLASS (' . $paramClassName . ') ';
                         }
@@ -54,13 +54,13 @@ class Kint_Parsers_ClassMethods extends kintParser
                             }
 
                             $defaultValue = 'array(' . implode(', ', $arrayValues) . ')';
-                        } elseif($param->getDefaultValue() === null){
+                        } elseif($param->getDefaultValue() === null) {
                             $defaultValue = 'NULL';
-                        } elseif($param->getDefaultValue() === false){
+                        } elseif($param->getDefaultValue() === false) {
                             $defaultValue = 'false';
-                        } elseif($param->getDefaultValue() === true){
+                        } elseif($param->getDefaultValue() === true) {
                             $defaultValue = 'true';
-                        } elseif($param->getDefaultValue() === ''){
+                        } elseif($param->getDefaultValue() === '') {
                             $defaultValue = '""';
                         } else {
                             $defaultValue = $param->getDefaultValue();
@@ -81,9 +81,9 @@ class Kint_Parsers_ClassMethods extends kintParser
                         $lines = array_combine($matches[1], $matches[2]);
                         if(isset($lines['return'])) {
                             $output->operator = '->';
-                            # since we're outputting code, assumption that the string is utf8 is most likely correct
-                            # and saves resources
-                            $output->type = self::_escape( $lines['return'], 'UTF-8' );
+                            // since we're outputting code, assumption that the string is utf8 is most likely correct
+                            // and saves resources
+                            $output->type = self::_escape($lines['return'], 'UTF-8');
                         }
                     }
                 }
@@ -103,7 +103,7 @@ class Kint_Parsers_ClassMethods extends kintParser
                             $line = substr($line, 1);
                         }
 
-                        $lines[] = self::_escape( trim( $line ), 'UTF-8' );
+                        $lines[] = self::_escape(trim($line), 'UTF-8');
                     }
 
                     $output->extendedValue = implode("\n", $lines) . "\n\n";
